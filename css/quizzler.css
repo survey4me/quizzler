@@ -1,0 +1,86 @@
+html, body, #container, #game {
+    height:100%;
+	overflow-y: hidden;
+}
+
+body {
+	font-family: Trebuchet MS, sans-serif;
+	background: #00294D;
+	color: white;
+}
+
+.hide {
+	visibility: hidden;
+}
+
+.board {
+	text-shadow: 0.25em 0.25em 0.25em #000;
+	text-align: center;
+	border-left: 0.5em solid #004B8D;
+	border-top: 0.5em solid #004B8D;
+	border-right: 0.5em solid #082136;
+	border-bottom: 0.5em solid #082136;
+}
+
+.grid_answer_money:active {
+
+border-left: 0.5em solid #082136;
+	border-top: 0.5em solid #082136;
+	border-right: 0.5em solid #004B8D;
+	border-bottom: 0.5em solid #004B8D;
+
+}
+
+.grid_topic {
+	text-transform:uppercase;
+	font-weight: bold;
+}
+
+.grid_answer_money {
+	color: yellow;
+	cursor: pointer;
+	line-height:100%;
+	padding: 0.25em;
+}
+
+.row {
+	margin: 0;
+}
+
+header.row  h1 {
+	margin: 0;
+	background: #00294D;
+}
+
+/*Place it into the centre*/
+div.fullscreen {
+   display: table;
+   width: 100%;
+   height: 100%;
+}
+div.answer_text {
+   display: table-cell;
+   text-align: center;
+   vertical-align: middle;
+   padding: 5%;
+}
+
+/*art*/
+div.fullscreen
+{
+	padding: 20px;
+	border-left: 20px solid #004B8D;
+	border-top: 20px solid #004B8D;
+	border-right: 20px solid #082136;
+	border-bottom: 20px solid #082136;
+}
+
+div.answer_text p {
+    text-align: center;
+    margin: 0;
+    vertical-align: middle;
+    line-height: 50px;
+	text-transform:uppercase;
+	font-size: 4em;
+	line-height: 1.5em;
+}

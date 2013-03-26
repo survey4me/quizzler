@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Quizzler</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> 
+	<link rel="stylesheet" href="css/gridiculous.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="css/quizzler.css">
+</head>
+<body>
+	<div id="container" class="grid wfull">
+		
+		<div id="game">
+		</div>
+	</div>
+	
+	<!-- ICanHaz Macros -->
+	
+	<script id="title_screen" type="text/html">
+		<img src= {{ url }}" alt="titlescreen" id="title_screen_image" />
+	</script>
+	
+	<!-- Board Macros -->
+	<script id="board_template" type="text/html">
+		<div id="board">
+			<header class="row">
+				<h1 class="c12">Quizzler</h1>
+			</header>
+		</div>
+	</script>
+	
+	<script id="topic_template" type="text/html">
+		<div class="c2 board grid_topic"><h2>{{ topic }}</h2></div>
+	</script>
+	
+	<script id="answer_template" type="text/html">
+		<div class="c2 {{ end }} board grid_answer_money"><h1>{{ value }}</h1></div>
+	</script>
+	
+	<!-- Answer / Question Macro -->
+	<script id="answer_text_template" type="text/html">
+		<div class="c12 fullscreen answerbox"><div class="answer_text"><p>{{ answer }}</p></div></div>
+	</script>
+	
+	<script id="answer_img_template" type="text/html">
+		<div class="c12 fullscreen answerbox"><div class="answer_text"><img src="{{ answer }}"/></div></div>
+	</script>
+	
+	<script id="answer_audio_template" type="text/html">
+		<div class="c12 fullscreen answerbox"><div class="answer_text"><audio controls><source src="{{ answer }}" type="audio/ogg"/></audio></div></div>
+	</script>
+	
+	<script id="question_text_template" type="text/html">
+		<div class="c12 fullscreen questionbox"><div class="answer_text"><p>{{ question }}</p></div></div>
+	</script>
+	
+	
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/icanhaz.min.js"></script>
+	<script src="js/howler.min.js"></script>
+	<script src="js/quizzler.js"></script>
+	
+	
+</body>
+</html>
