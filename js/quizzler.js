@@ -32,6 +32,8 @@
 				
 			$("#game").append(ich.question_text_template({question : event.data.question}).hide());
 			target = $("#game").children().last();
+			$(".answerbox").disableSelection();
+			$(".questionbox").disableSelection();
 			$(".answerbox").dblclick(function(){target.show();$(".answerbox").remove();}); //couldn't select just the newly created question otherwise.
 			$(".questionbox").dblclick(function(){$("#board").fadeIn(); $(".questionbox").remove();}); //couldn't select just the newly created question otherwise.
 			
