@@ -46,7 +46,8 @@
 			var quizData = json.quiz_data;
 		
 			//prepare board
-			var board = $("#game").append(ich.board_template({}, true)).children();
+			var board = ich.board_template();
+			$("#game").append(board);
 			var round = quizData.rounds[0];
 			var topics = round.topics;
 		
@@ -73,7 +74,7 @@
 				row.children().last().addClass("end");
 			}
 			
-			$("#board").disableSelection();
+			board.disableSelection();
 			
 		});
 	});
