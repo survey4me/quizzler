@@ -55,7 +55,7 @@
 			var row = board.append('<div class="row">').children().last();
 			
 			for (var i = 0; i < topics.length; i++){
-				row.append(ich.topic_template({"topic" : topics[i].name}, true));
+				row.append(ich.topic_template({"topic" : topics[i].name}));
 			}
 			
 			row = row.parent();
