@@ -13,17 +13,19 @@
 		
 		onBoardClick = function(event) {
 			var answer;
+			var question;
 
 			answer = ich.answer_text_template({answer : event.data.answer});
+			question = ich.question_text_template({question : event.data.question}).hide()
 				
 			$("#game").append(answer);
-				
-			$("#game").append(ich.question_text_template({question : event.data.question}).hide());
-			target = $("#game").children().last();
+			$("#game").append(question);
+
 			answer.disableSelection();
-			$(".questionbox").disableSelection();
-			answer.dblclick(function(){target.show();$(".answerbox").remove();}); //couldn't select just the newly created question otherwise.
-			$(".questionbox").dblclick(function(){$("#board").fadeIn(); $(".questionbox").remove();}); //couldn't select just the newly created question otherwise.
+			answer.dblclick(function(){question.show(); answer.remove();});
+
+			question.disableSelection();
+			question.dblclick(function(){$("#board").fadeIn(); question.remove();});
 			
 			$("#board").fadeOut();
 		};
