@@ -22,7 +22,7 @@
 			$("#game").append(question);
 
 			answer.disableSelection();
-			answer.dblclick(function(){question.show(); answer.remove();});
+			answer.dblclick(function(){question.fadeIn(); answer.remove();});
 
 			question.disableSelection();
 			question.dblclick(function(){$("#board").fadeIn(); question.remove();});
