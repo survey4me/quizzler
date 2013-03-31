@@ -21,14 +21,16 @@
 			var audio_pattern = /.*\.(ogg|mp3|opus|wav)/
 			//var video_pattern = /.*\.(ogv|avi|mp4)/; Unused for now.
 			var target;
-			
+			var answer;
+
 			if (graphic_pattern.test(event.data.answer))
-				$("#game").append(ich.answer_img_template({answer : event.data.answer}));
+				answer = ich.answer_img_template({answer : event.data.answer});
 			else if (audio_pattern.test(event.data.answer))
-				$("#game").append(ich.answer_audio_template({answer : event.data.answer}));
+				answer = ich.answer_audio_template({answer : event.data.answer});
 			else
-				$("#game").append(ich.answer_text_template({answer : event.data.answer}));
+				answer = ich.answer_text_template({answer : event.data.answer});
 				
+			$("#game").append(answer);
 				
 			$("#game").append(ich.question_text_template({question : event.data.question}).hide());
 			target = $("#game").children().last();
