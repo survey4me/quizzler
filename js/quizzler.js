@@ -12,31 +12,17 @@
 		//---------------------------------------------------------------------
 		
 		onBoardClick = function(event) {
-			//alert(event.data.j + " " + event.data.k);
-			//$("#board").addClass("animated fadeOut");
-			
-			//console.log("Is graphic" + event.data.isGraphic); Doesn't work. I need to throw it in the setup Click call when the board is built.
-			
-			var graphic_pattern = /.*\.(png|gif|jpg)/
-			var audio_pattern = /.*\.(ogg|mp3|opus|wav)/
-			//var video_pattern = /.*\.(ogv|avi|mp4)/; Unused for now.
-			var target;
 			var answer;
 
-			if (graphic_pattern.test(event.data.answer))
-				answer = ich.answer_img_template({answer : event.data.answer});
-			else if (audio_pattern.test(event.data.answer))
-				answer = ich.answer_audio_template({answer : event.data.answer});
-			else
-				answer = ich.answer_text_template({answer : event.data.answer});
+			answer = ich.answer_text_template({answer : event.data.answer});
 				
 			$("#game").append(answer);
 				
 			$("#game").append(ich.question_text_template({question : event.data.question}).hide());
 			target = $("#game").children().last();
-			$(".answerbox").disableSelection();
+			answer.disableSelection();
 			$(".questionbox").disableSelection();
-			$(".answerbox").dblclick(function(){target.show();$(".answerbox").remove();}); //couldn't select just the newly created question otherwise.
+			answer.dblclick(function(){target.show();$(".answerbox").remove();}); //couldn't select just the newly created question otherwise.
 			$(".questionbox").dblclick(function(){$("#board").fadeIn(); $(".questionbox").remove();}); //couldn't select just the newly created question otherwise.
 			
 			$("#board").fadeOut();
